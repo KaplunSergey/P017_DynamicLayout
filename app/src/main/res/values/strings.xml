@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">P017_DynamicLayout</string>
+    <string name="right">right</string>
+    <string name="center">center</string>
+    <string name="left">left</string>
+    <string name="clear">clear</string>
+    <string name="create">create</string>
+</resources>
