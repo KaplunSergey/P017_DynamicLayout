@@ -1,6 +1,7 @@
 package com.mapatar.p017_dynamiclayout;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -18,9 +19,9 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.mapatar.p017_dynamiclayout", appContext.getPackageName());
+        Context context = InstrumentationRegistry.getTargetContext();
+        final SharedPreferences audio = context.getSharedPreferences("audio",Context.MODE_PRIVATE);
+        final int duration = audio.getInt("not_existed_duration", -1);
+        assertEquals(-1, duration);
     }
 }
